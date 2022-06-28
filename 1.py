@@ -31,13 +31,13 @@ driver.get(
     'https://stgconsole.virnect.com/?continue=https%3A%2F%2Fstgwww.virnect.com%2F')
 
 # 아이디 입력창 선택
-username = driver.find_element(By.NAME, "email")   /html/body/div/div/div/div/div[1]/input
+username = driver.find_element(By.NAME, "email")
 
 # 아이디 입력
 username.send_keys("maxgim875@gmail.com")
 
 # 패스워드 입력창 선택
-password = driver.find_element(By.NAME, "password")   /html/body/div/div/div/div/div[2]/input
+password = driver.find_element(By.NAME, "password")
 
 # 패스워드 입력
 password.send_keys("@rokmc875th")
