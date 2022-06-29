@@ -30,14 +30,25 @@ time.sleep(3)
 driver.get(
     'https://stgconsole.virnect.com/?continue=https%3A%2F%2Fstgwww.virnect.com%2F')
 
-# 아이디 입력창 선택
-username = driver.find_element(By.NAME, "email")
+# 3초 대기
+time.sleep(3)
 
-# 아이디 입력
-username.send_keys("maxgim875@gmail.com")
+# 아이디 입력창 위치 찾기 및 아이디 입력
+userid = driver.find_element(
+    By.XPATH,
+    "//div[@class='email-input el-input el-input--suffix']/input[1]").send_keys('')
 
-# 패스워드 입력창 선택
-password = driver.find_element(By.NAME, "password")
+# 3초 대기
+time.sleep(3)
 
-# 패스워드 입력
-password.send_keys("@rokmc875th")
+# 패스워드 입력창 위치 찾기 및 패스워드 입력
+userpw = driver.find_element(
+    By.XPATH,
+    "//div[@class= 'password-input el-input el-input--suffix']/input[1]").send_keys('')
+
+# 3초 대기
+time.sleep(3)
+
+# 로그인 클릭
+loginclick = driver.find_element(
+    By.XPATH, "//*[@class= 'el-button next-btn block-btn el-button--info']").click()
