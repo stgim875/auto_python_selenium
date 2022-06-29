@@ -36,7 +36,7 @@ time.sleep(3)
 # 아이디 입력창 위치 찾기 및 아이디 입력
 userid = driver.find_element(
     By.XPATH,
-    "//div[@class='email-input el-input el-input--suffix']/input[1]").send_keys('')
+    "//div[@class='email-input el-input el-input--suffix']/input[1]").send_keys('maxgim875@gmail.com')
 
 # 3초 대기
 time.sleep(3)
@@ -44,7 +44,7 @@ time.sleep(3)
 # 패스워드 입력창 위치 찾기 및 패스워드 입력
 userpw = driver.find_element(
     By.XPATH,
-    "//div[@class= 'password-input el-input el-input--suffix']/input[1]").send_keys('')
+    "//div[@class= 'password-input el-input el-input--suffix']/input[1]").send_keys('@rokmc875th')
 
 # 3초 대기
 time.sleep(3)
@@ -52,3 +52,16 @@ time.sleep(3)
 # 로그인 클릭
 loginclick = driver.find_element(
     By.XPATH, "//*[@class= 'el-button next-btn block-btn el-button--info']").click()
+
+# 3초 대기
+time.sleep(3)
+
+statusbtn = driver.find_element(By.XPATH, "//*[@class = 'link-btn status-btn']").click()
+
+# 3초 대기
+time.sleep(3)
+
+# 로그아웃 시 매우 중요함
+# status 메뉴 선택
+# informatiobtn = driver.find_element(
+#     By.XPATH, "//*[@class='status-btn thumbnail-btn']").click()
