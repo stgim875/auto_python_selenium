@@ -27,8 +27,11 @@ driver.maximize_window()
 time.sleep(3)
 
 # Log in 페이지로 이동한다.
-driver.get(
-    'https://stgconsole.virnect.com/?continue=https%3A%2F%2Fstgwww.virnect.com%2F')
+# driver.get(
+#     'https://stgconsole.virnect.com/?continue=https%3A%2F%2Fstgwww.virnect.com%2F')
+
+# Log in 버튼을 클릭하여 로그인센터로 이동한다.
+logincenter = driver.find_element(By.XPATH, "//*[@class ='login-btn']").click()
 
 # 3초 대기
 time.sleep(3)
@@ -36,7 +39,7 @@ time.sleep(3)
 # 아이디 입력창 위치 찾기 및 아이디 입력
 userid = driver.find_element(
     By.XPATH,
-    "//div[@class='email-input el-input el-input--suffix']/input[1]").send_keys('maxgim875@gmail.com')
+    "//div[@class ='email-input el-input el-input--suffix']/input[1]").send_keys('maxgim875@gmail.com')
 
 # 3초 대기
 time.sleep(3)
@@ -44,24 +47,52 @@ time.sleep(3)
 # 패스워드 입력창 위치 찾기 및 패스워드 입력
 userpw = driver.find_element(
     By.XPATH,
-    "//div[@class= 'password-input el-input el-input--suffix']/input[1]").send_keys('@rokmc875th')
+    "//div[@class = 'password-input el-input el-input--suffix']/input[1]").send_keys('@rokmc875th')
 
 # 3초 대기
 time.sleep(3)
 
 # 로그인 클릭
 loginclick = driver.find_element(
-    By.XPATH, "//*[@class= 'el-button next-btn block-btn el-button--info']").click()
+    By.XPATH, "//*[@class = 'el-button next-btn block-btn el-button--info']").click()
 
 # 3초 대기
 time.sleep(3)
 
-statusbtn = driver.find_element(By.XPATH, "//*[@class = 'link-btn status-btn']").click()
+# 썸네일 버튼을 클릭
+thumbnailbutn  = driver.find_element(By.XPATH, "//*[@class = 'link-btn status-btn']").click()
 
 # 3초 대기
 time.sleep(3)
+
+# Remote 메뉴 클릭
+# Remotemenu = driver.find_element(
+#     By.XPATH, "//*[@class='remote']").click()
+Remotemenu = driver.find_element(
+    By.XPATH, "//a[@href ='https://stgremote.virnect.com']").click()
+
+# 3초 대기
+time.sleep(3)
+
+# 원격 협업 생성 버튼 클릭
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//*[@class = 'btn' and contains(text(), '원격 협업 생성')]").clik()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//button[contains(., '원격 협업 생성')]").click()
+
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn')]").click()
+
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
+
+# 오픈 룸 생성
+# openroomcreatebtn = driver.find_element(
+#     By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
 
 # 로그아웃 시 매우 중요함
 # status 메뉴 선택
 # informatiobtn = driver.find_element(
-#     By.XPATH, "//*[@class='status-btn thumbnail-btn']").click()
+#     By.XPATH, "//*[@class ='status-btn thumbnail-btn']").click()
