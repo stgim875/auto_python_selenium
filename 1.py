@@ -59,7 +59,8 @@ loginclick = driver.find_element(
 # 3초 대기
 time.sleep(3)
 
-statusbtn = driver.find_element(By.XPATH, "//*[@class = 'link-btn status-btn']").click()
+# 썸네일 버튼을 클릭
+thumbnailbutn  = driver.find_element(By.XPATH, "//*[@class = 'link-btn status-btn']").click()
 
 # 3초 대기
 time.sleep(3)
