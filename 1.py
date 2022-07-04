@@ -72,25 +72,31 @@ Remotemenu = driver.find_element(
     By.XPATH, "//a[@href ='https://stgremote.virnect.com']").click()
 
 # 3초 대기
-time.sleep(3)
+time.sleep(30)
 
 # 원격 협업 생성 버튼 클릭
 # remotecreatebtn = driver.find_element(
 #     By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
+
 # remotecreatebtn = driver.find_element(
 #     By.XPATH, "//*[@class = 'btn' and contains(text(), '원격 협업 생성')]").clik()
+
 # remotecreatebtn = driver.find_element(
 #     By.XPATH, "//button[contains(., '원격 협업 생성')]").click()
 
 # remotecreatebtn = driver.find_element(
 #     By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn')]").click()
 
-remotecreatebtn = driver.find_element(
-    By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
 
 # 오픈 룸 생성
 # openroomcreatebtn = driver.find_element(
 #     By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
+
+# 
+createroommanager = driver.find_elements(
+By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
 
 # 로그아웃 시 매우 중요함
 # status 메뉴 선택
