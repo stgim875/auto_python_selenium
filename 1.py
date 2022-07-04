@@ -95,7 +95,7 @@ time.sleep(30)
 #     By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
 
 # 
-createroommanager = driver.find_elements(
+createroommanager = driver.find_element(
 By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
 
 # 로그아웃 시 매우 중요함
