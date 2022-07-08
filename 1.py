@@ -75,50 +75,57 @@ Remotemenu = driver.find_element(
 time.sleep(5)
 
 # 원격 협업 생성 버튼 클릭
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//*[@class = 'btn' and contains(text(), '원격 협업 생성')]").clik()
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//*[@class = 'btn' and contains(text(), '원격 협업 생성')]").clik()
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//button[contains(., '원격 협업 생성')]").click()
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//button[contains(., '원격 협업 생성')]").click()
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn')]").click()
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn']").click()
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH,
-# "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[1]").click()
-
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[1]").click()
 
 # 오픈 룸 생성 버튼 클릭
-# openroomcreatebtn = driver.find_element(
-#     By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
+openroomcreatebtn = driver.find_element(
+    By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
 
-# openroomcreatebtn = driver.find_element(
-#     By.XPATH, "//*[contains(text(), '오픈 룸 생성')]").click()
+openroomcreatebtn = driver.find_element(
+    By.XPATH, "//*[contains(text(), '오픈 룸 생성')]").click()
 
-# openroomcreatebtn  = driver.find_element(
-#     By.XPATH, "//*[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").clik()
+openroomcreatebtn  = driver.find_element(
+    By.XPATH, "//*[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").clik()
 
-# openroomcreatebtn  = driver.find_element(
-#     By.XPATH, "//button[contains(., '오픈 룸 생성')]").click()
+openroomcreatebtn  = driver.find_element(
+    By.XPATH, "//button[contains(., '오픈 룸 생성')]").click()
+
+openroomcreatebtn = driver.find_element(
+    By.XPATH, "// div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open']").click()
+
+openroomcreatebtn = driver.find_element(
+    By.XPATH, "// //div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").click()
+
+openroomcreatebtn = driver.find_element(
+    By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[2]").click()
 
 # 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
-# createroommanager = driver.find_element(
-# By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
+createroommanager = driver.find_element(
+By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
 
-# createroommanager = driver.find_elements(
-#     By.XPATH,
-# "//*[@class= 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
+createroommanager = driver.find_elements(
+    By.XPATH,
+"//*[@class= 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
 
-# createroommanager = driver.find_element(
-#     By.XPATH,
-#     "//*[@class = 'collapsible__content opend']/div[1]").click()
+createroommanager = driver.find_element(
+    By.XPATH,
+    "//*[@class = 'collapsible__content opend']/div[1]").click()
 
 # 로그아웃 시 매우 중요함
 # status 메뉴 선택
