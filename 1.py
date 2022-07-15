@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -75,57 +76,104 @@ Remotemenu = driver.find_element(
 time.sleep(5)
 
 # 원격 협업 생성 버튼 클릭
-remotecreatebtn = driver.find_element(
-    By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
 
-remotecreatebtn = driver.find_element(
-    By.XPATH, "//*[@class = 'btn' and contains(text(), '원격 협업 생성')]").clik()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//*[@class = 'btn' and contains(text(), '원격 협업 생성')]").clik()
 
-remotecreatebtn = driver.find_element(
-    By.XPATH, "//button[contains(., '원격 협업 생성')]").click()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//button[contains(., '원격 협업 생성')]").click()
 
-remotecreatebtn = driver.find_element(
-    By.XPATH, "//div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn']").click()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn']").click()
 
-remotecreatebtn = driver.find_element(
-    By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
 
-remotecreatebtn = driver.find_element(
-    By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[1]").click()
+# remotecreatebtn = driver.find_element(
+#     By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[1]").click()
 
 # 오픈 룸 생성 버튼 클릭
-openroomcreatebtn = driver.find_element(
-    By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
+# openroomcreatebtn = driver.find_element(
+#     By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
 
-openroomcreatebtn = driver.find_element(
-    By.XPATH, "//*[contains(text(), '오픈 룸 생성')]").click()
+# openroomcreatebtn = driver.find_element(
+#     By.XPATH, "//*[contains(text(), '오픈 룸 생성')]").click()
 
-openroomcreatebtn  = driver.find_element(
-    By.XPATH, "//*[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").clik()
+# openroomcreatebtn  = driver.find_element(
+#     By.XPATH, "//*[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").clik()
 
-openroomcreatebtn  = driver.find_element(
-    By.XPATH, "//button[contains(., '오픈 룸 생성')]").click()
+# openroomcreatebtn  = driver.find_element(
+#     By.XPATH, "//button[contains(., '오픈 룸 생성')]").click()
 
-openroomcreatebtn = driver.find_element(
-    By.XPATH, "// div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open']").click()
+# openroomcreatebtn = driver.find_element(
+#     By.XPATH, "// div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open']").click()
 
-openroomcreatebtn = driver.find_element(
-    By.XPATH, "// //div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").click()
+# openroomcreatebtn = driver.find_element(
+#     By.XPATH, "// //div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").click()
 
-openroomcreatebtn = driver.find_element(
-    By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[2]").click()
+# openroomcreatebtn = driver.find_element(
+#     By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[2]").click()
 
 # 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
-createroommanager = driver.find_element(
-By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
+# createroommanager = driver.find_element(
+# By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
 
-createroommanager = driver.find_elements(
-    By.XPATH,
-"//*[@class= 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
+# createroommanager = driver.find_elements(
+#     By.XPATH,
+# "//*[@class= 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
 
-createroommanager = driver.find_element(
-    By.XPATH,
-    "//*[@class = 'collapsible__content opend']/div[1]").click()
+# createroommanager = driver.find_element(
+#     By.XPATH,
+#     "//*[@class = 'collapsible__content opend']/div[1]").click()
+
+
+# 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
+# for i in range(1, len(driver.find_elements_by_xpath("//button"))):
+#     print(str(i)+"번째")
+# print(driver.find_elements_by_xpath("//button")[i].accessible_name)
+
+# driver.find_elements_by_xpath("//button")[1].click()
+
+# print(driver.window_handles, "팝업 : "+str(len(driver.window_handles))+"개")
+# [i for i in BeautifulSoup(driver.page_source, 'html.parser').findAll("iframe")]
+
+# driver.find_element_by_xpath("/html/body/section/div/div/div[1]/section/div[1]/button[1]").text  # 원격 협업생성 텍스트 출력
+
+# driver.find_element_by_xpath("/html/body/section/div/div/div[1]/section/div[1]/button[2]").text  #오픈 룸 생성 텍스트 출력
+
+#복숭아총각 >>
+#원격 협업 버튼 찾기
+# for i in range(1, len(driver.find_elements_by_xpath("//button"))):
+#     txt = driver.find_elements_by_xpath("//button")[i].text
+#     if len(txt) != 0:
+#         print(str(i)+"번째 : "+txt)
+# 출력 내용 보여주세요.
+# C: \auto_python_selenium\1.py: 147: DeprecationWarning: find_elements_by_xpath is deprecated. Please use find_elements(by=By.XPATH, value=xpath) instead
+# for i in range(1, len(driver.find_elements_by_xpath("//button"))):
+# C: \auto_python_selenium\1.py: 148: DeprecationWarning: find_elements_by_xpath is deprecated. Please use find_elements(by=By.XPATH, value=xpath) instead
+# txt = driver.find_elements_by_xpath("//button")[i].text
+# 1번째: Solutions
+# 2번째: Products
+# 3번째: Pricing
+# 4번째: Company
+# 5번째: Contact
+# 6번째: Free Trials
+# 10번째: more
+# 12번째: 바로가기
+# 20번째: 전체보기
+# 21번째: CONTACT
+
+#수동 클릭 후 팝업이 뜨면
+# 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
+# driver.switch_to.window(driver.window_handles[1])
+
+#출력물 보여주세요.
+# print(driver.page_source)
+
+# for i in [i.get_text() for i in BeautifulSoup(driver.page_source, 'html.parser')]:
+#     print(i)
 
 # 로그아웃 시 매우 중요함
 # status 메뉴 선택
