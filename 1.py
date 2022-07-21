@@ -1,3 +1,5 @@
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.alert import Alert
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -6,11 +8,21 @@ import time
 
 # USB: usb_device_handle_win.cc:1048 Failed to read descriptor
 # from node connection:시스템에 부착된 장치가 작동하지 않습니다.(0x1F)
-options = webdriver.ChromeOptions()
+# options = webdriver.ChromeOptions()
+# options.add_experimental_option("excludeSwitches", ["enable-logging"])
+
+options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
+options.add_argument("--use-fake-ui-for-media-stream")
+
+CHROME_DRIVER_PATH = (
+    "C:\python_selenium_auto\chromedriver.exe")  # 크롬드라이버 경로경로
+driver = webdriver.Chrome(
+    executable_path=CHROME_DRIVER_PATH, chrome_options=options)
 
 # 사용할 webdriver 지정: Chrome 사용
-driver = webdriver.Chrome(options=options)
+# driver = webdriver.Chrome(options=options)
+
 # 진입할 경로 지정
 driver.get("https://stgwww.virnect.com/")
 
@@ -61,7 +73,8 @@ loginclick = driver.find_element(
 time.sleep(3)
 
 # 썸네일 버튼을 클릭
-thumbnailbutn  = driver.find_element(By.XPATH, "//*[@class = 'link-btn status-btn']").click()
+thumbnailbutn = driver.find_element(
+    By.XPATH, "//*[@class = 'link-btn status-btn']").click()
 
 # 3초 대기
 time.sleep(3)
@@ -72,108 +85,111 @@ time.sleep(3)
 Remotemenu = driver.find_element(
     By.XPATH, "//a[@href ='https://stgremote.virnect.com']").click()
 
-# 3초 대기
+# 5초 대기
 time.sleep(5)
 
-# 원격 협업 생성 버튼 클릭
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
+# 현재 활성화 된 탭
+print(driver.window_handles)
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//*[@class = 'btn' and contains(text(), '원격 협업 생성')]").clik()
+# 최근 열린 탭으로 전환
+driver.switch_to.window(driver.window_handles[-1])
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//button[contains(., '원격 협업 생성')]").click()
+# 5초 대기
+time.sleep(5)
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn']").click()
+# 쿠키 및 이용통계 수집 동의 모달
+cookiebtn = driver.find_element(
+    By.XPATH, "//*[@class = 'cookie-policy-wrapper__submit-button']").click()
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//div[@class ='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn' and contains(text(), '원격 협업 생성')]").click()
+# 5초 대기
+time.sleep(5)
 
-# remotecreatebtn = driver.find_element(
-#     By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[1]").click()
+
+# # 원격 협업 생성 버튼 클릭
+# driver.find_element(By.XPATH,
+#     "/html/body/section/div/div/div[1]/section/div[1]/button[1]").click()
+
+remotecreatebtn = driver.find_element(
+    By.XPATH, "//*[contains(text(), '원격 협업 생성')]").click()
+
+# 5초 대기
+time.sleep(5)
+
+# 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
+# stgim875@gmail.com [1]
+# stgim1516@gmail.com[1]
+# stgim1314@gmail.com[2]
+# stgim1112@gmail.com[3]
+# stgim789@gmail.com[4]
+# stgim456@gmail.com[5]
+# stgim123@gmail.com[6]
+
+createroommanager = driver.find_element(
+    By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][6]").click()
+
+createroommanager = driver.find_element(
+    By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][6]").click()
+
+# 5초 대기
+time.sleep(5)
+
+# 원격 협업 생성하기 시작하기 버튼 클릭
+# createroommanager = driver.find_element(
+#     By.XPATH, "//*[@class = 'btn large createroom-info__button']").click()
+
+# 10초 대기
+# time.sleep(10)
+
+# permission 동의 팝업창 확인 선택하기
+# 카메라 및 마이크 => options.add_argument("--use-fake-ui-for-media-stream")으로 fake 처리함
+
+# 최근 열린 탭으로 전환
+driver.switch_to.window(driver.window_handles[-1])
+
+# 5초 대기
+time.sleep(5)
+
+# 현재 시점에 Remote 모바일 앱에서 알림 메뉴에서
+
+
+# 추가 초대하기 버튼 클릭
+# addbutton = driver.find_element(
+#     By.XPATH, "//*[@class = 'participant-video append more']").click()
+#
+# # 5초 대기
+# time.sleep(5)
+
+
+# 녹화 버튼 클릭하기
+# buttonmenu_1 = driver.find_element(
+#     By.XPATH, "//*[@class='menus-box']/div[@class='tooltip tooltip-menu'][2]/button[@class='menu']").click()
+
+# 3초 대기
+# time.sleep(3)
+
+# 녹화 버튼 다시 클릭하기
+# buttonmenu_2 = driver.find_element(
+#     By.XPATH, "//*[@class='menus-box']/div[@class='tooltip tooltip-menu'][2]/button[@class='menu active']").click()
+
+# 5초 대기
+# time.sleep(5)
+
+# 나가기 버튼 클릭
+# exit_ = driver.find_element(
+#     By.XPATH, "//*[@class = 'header-tools__leave']").click()
+
+# 5초 대기
+# time.sleep(5)
+
+# 최근 열린 탭으로 전환
+# driver.switch_to.window(driver.window_handles[-1])
+
+# 5초 대기
+# time.sleep(5)
 
 # 오픈 룸 생성 버튼 클릭
 # openroomcreatebtn = driver.find_element(
 #     By.XPATH, "//*[@class = 'btn workspace-welcome__open']").click()
-
-# openroomcreatebtn = driver.find_element(
-#     By.XPATH, "//*[contains(text(), '오픈 룸 생성')]").click()
-
-# openroomcreatebtn  = driver.find_element(
-#     By.XPATH, "//*[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").clik()
-
-# openroomcreatebtn  = driver.find_element(
-#     By.XPATH, "//button[contains(., '오픈 룸 생성')]").click()
-
-# openroomcreatebtn = driver.find_element(
-#     By.XPATH, "// div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open']").click()
-
-# openroomcreatebtn = driver.find_element(
-#     By.XPATH, "// //div[@class='workspace-wrapper']/section[@class='workspace-welcome']/div[@class='workspace-welcome__body offsetwidth']/button[@class='btn workspace-welcome__open' and contains(text(), '오픈 룸 생성')]").click()
-
-# openroomcreatebtn = driver.find_element(
-#     By.XPATH, "//div[@class = 'workspace-wrapper']/section[@class = 'workspace-welcome']/div[@class = 'workspace-welcome__body offsetwidth']/button[2]").click()
-
-# 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
-# createroommanager = driver.find_element(
-# By.XPATH, "//*[@class = 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
-
-# createroommanager = driver.find_elements(
-#     By.XPATH,
-# "//*[@class= 'collapsible__content opend']/div[@class = 'widecard choice'][1]").click()
-
-# createroommanager = driver.find_element(
-#     By.XPATH,
-#     "//*[@class = 'collapsible__content opend']/div[1]").click()
-
-
-# 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
-# for i in range(1, len(driver.find_elements_by_xpath("//button"))):
-#     print(str(i)+"번째")
-# print(driver.find_elements_by_xpath("//button")[i].accessible_name)
-
-# driver.find_elements_by_xpath("//button")[1].click()
-
-# print(driver.window_handles, "팝업 : "+str(len(driver.window_handles))+"개")
-# [i for i in BeautifulSoup(driver.page_source, 'html.parser').findAll("iframe")]
-
-# driver.find_element_by_xpath("/html/body/section/div/div/div[1]/section/div[1]/button[1]").text  # 원격 협업생성 텍스트 출력
-
-# driver.find_element_by_xpath("/html/body/section/div/div/div[1]/section/div[1]/button[2]").text  #오픈 룸 생성 텍스트 출력
-
-#복숭아총각 >>
-#원격 협업 버튼 찾기
-# for i in range(1, len(driver.find_elements_by_xpath("//button"))):
-#     txt = driver.find_elements_by_xpath("//button")[i].text
-#     if len(txt) != 0:
-#         print(str(i)+"번째 : "+txt)
-# 출력 내용 보여주세요.
-# C: \auto_python_selenium\1.py: 147: DeprecationWarning: find_elements_by_xpath is deprecated. Please use find_elements(by=By.XPATH, value=xpath) instead
-# for i in range(1, len(driver.find_elements_by_xpath("//button"))):
-# C: \auto_python_selenium\1.py: 148: DeprecationWarning: find_elements_by_xpath is deprecated. Please use find_elements(by=By.XPATH, value=xpath) instead
-# txt = driver.find_elements_by_xpath("//button")[i].text
-# 1번째: Solutions
-# 2번째: Products
-# 3번째: Pricing
-# 4번째: Company
-# 5번째: Contact
-# 6번째: Free Trials
-# 10번째: more
-# 12번째: 바로가기
-# 20번째: 전체보기
-# 21번째: CONTACT
-
-#수동 클릭 후 팝업이 뜨면
-# 원격 협업 생성하기 모달창에서 멤버 선택하여 추가하기
-# driver.switch_to.window(driver.window_handles[1])
-
-#출력물 보여주세요.
-# print(driver.page_source)
-
-# for i in [i.get_text() for i in BeautifulSoup(driver.page_source, 'html.parser')]:
-#     print(i)
 
 # 로그아웃 시 매우 중요함
 # status 메뉴 선택
